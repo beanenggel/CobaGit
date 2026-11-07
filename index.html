@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Belajar CSS & Flexbox</title>
     <style>
-      /* Global Style */
       body {
         background-color: #eef2f7;
         font-family: Arial, sans-serif;
@@ -13,22 +12,28 @@
         padding: 20px;
       }
 
-      /* Menggunakan Class Selector */
-      .kartu-profil {
-        background-color: white;
-        padding: 20px; /* Jarak dalam (Padding) */
-        margin-bottom: 20px; /* Jarak luar bawah (Margin) */
-        border: 2px solid #cbd5e1; /* Garis Tepi (Border) */
-        border-radius: 8px; /* Membuat sudut kotak melengkung */
+      /* MEMBUAT FLEXBOX CONTAINER */
+      .container-flex {
+        display: flex; /* Mengubah layout jadi fleksibel */
+        flex-wrap: wrap; /* Supaya turun ke bawah jika layar penuh */
+        gap: 20px; /* Memberikan jarak antar kartu secara otomatis */
       }
 
-      /* Menggunakan ID Selector */
+      /* Kartu Profil kini menjadi Flex Item */
+      .kartu-profil {
+        background-color: white;
+        padding: 20px;
+        border: 2px solid #cbd5e1;
+        border-radius: 8px;
+        flex: 1; /* Membuat lebar kartu membagi rata ruang */
+        min-width: 280px; /* Batas minimal lebar kartu */
+      }
+
       #judul-utama {
         color: #0284c7;
         margin-top: 0;
       }
 
-      /* Styling Tabel */
       table {
         border-collapse: collapse;
         width: 100%;
@@ -50,47 +55,29 @@
     </style>
   </head>
   <body>
-    <!-- Kartu 1: Profil & Tautan -->
-    <div class="kartu-profil">
-      <h1 id="judul-utama">Profil Pembelajar Web</h1>
-      <p>
-        Halo, saya sedang mempelajari <strong>Box Model</strong>,
-        <em>Class</em>, dan <em>ID</em> di CSS.
-      </p>
-      <a href="https://github.com" target="_blank">Buka Akun GitHub</a>
-    </div>
+    <!-- Pembungkus utama berfitur Flexbox -->
+    <div class="container-flex">
+      <!-- Kartu 1 -->
+      <div class="kartu-profil">
+        <h1 id="judul-utama">Profil Pembelajar Web</h1>
+        <p>Halo, saya sedang mempelajari <strong>Flexbox</strong> di CSS.</p>
+        <a href="https://github.com" target="_blank">Buka Akun GitHub</a>
+      </div>
 
-    <!-- Kartu 2: Status Belajar -->
-    <div class="kartu-profil">
-      <h2>Status Belajar CSS</h2>
-      <table>
-        <tr>
-          <th>Modul</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td>CLI & Git</td>
-          <td>Selesai</td>
-        </tr>
-        <tr>
-          <td>Dasar Selector & Box Model</td>
-          <td>Sedang Dipelajari</td>
-        </tr>
-        <tr>
-          <td>Flexbox & Responsive Design</td>
-          <td>Segera</td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- Kartu 3: Formulir Feedback -->
-    <div class="kartu-profil">
-      <h2>Formulir Feedback</h2>
-      <form action="">
-        <label for="nama">Nama:</label><br />
-        <input type="text" id="nama" name="nama" required /><br /><br />
-        <button type="submit">Kirim Data</button>
-      </form>
+      <!-- Kartu 2 -->
+      <div class="kartu-profil">
+        <h2>Status Belajar CSS</h2>
+        <table>
+          <tr>
+            <th>Modul</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>Flexbox Layout</td>
+            <td>Sedang Dipelajari</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </body>
 </html>
