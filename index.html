@@ -1,48 +1,96 @@
 <!doctype html>
 <html>
   <head>
-    <title>Latihan HTML Dasar</title>
+    <meta charset="UTF-8" />
+    <title>Belajar CSS & Flexbox</title>
+    <style>
+      /* Global Style */
+      body {
+        background-color: #eef2f7;
+        font-family: Arial, sans-serif;
+        color: #333333;
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* Menggunakan Class Selector */
+      .kartu-profil {
+        background-color: white;
+        padding: 20px; /* Jarak dalam (Padding) */
+        margin-bottom: 20px; /* Jarak luar bawah (Margin) */
+        border: 2px solid #cbd5e1; /* Garis Tepi (Border) */
+        border-radius: 8px; /* Membuat sudut kotak melengkung */
+      }
+
+      /* Menggunakan ID Selector */
+      #judul-utama {
+        color: #0284c7;
+        margin-top: 0;
+      }
+
+      /* Styling Tabel */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: white;
+        margin-top: 10px;
+      }
+
+      th,
+      td {
+        border: 1px solid #cbd5e1;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #0284c7;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Profil Pembelajar Web</h1>
-    </header>
-    <section>
+    <!-- Kartu 1: Profil & Tautan -->
+    <div class="kartu-profil">
+      <h1 id="judul-utama">Profil Pembelajar Web</h1>
       <p>
-        Halo, saya sedang belajar <strong>HTML</strong> dan <em>Git</em>.
-        <a href="https://github.com">Buka Akun github</a>
+        Halo, saya sedang mempelajari <strong>Box Model</strong>,
+        <em>Class</em>, dan <em>ID</em> di CSS.
       </p>
-    </section>
-    <section>
-      <h2>Status Belajar</h2>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Materi</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>CLI & Git</td>
-            <td>Selesai</td>
-          </tr>
-          <tr>
-            <td>HTML Dasar</td>
-            <td>Sedang Dipelajari</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+      <a href="https://github.com" target="_blank">Buka Akun GitHub</a>
+    </div>
 
-    <section>
+    <!-- Kartu 2: Status Belajar -->
+    <div class="kartu-profil">
+      <h2>Status Belajar CSS</h2>
+      <table>
+        <tr>
+          <th>Modul</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>CLI & Git</td>
+          <td>Selesai</td>
+        </tr>
+        <tr>
+          <td>Dasar Selector & Box Model</td>
+          <td>Sedang Dipelajari</td>
+        </tr>
+        <tr>
+          <td>Flexbox & Responsive Design</td>
+          <td>Segera</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Kartu 3: Formulir Feedback -->
+    <div class="kartu-profil">
       <h2>Formulir Feedback</h2>
       <form action="">
         <label for="nama">Nama:</label><br />
         <input type="text" id="nama" name="nama" required /><br /><br />
-
         <button type="submit">Kirim Data</button>
       </form>
-    </section>
+    </div>
   </body>
 </html>
